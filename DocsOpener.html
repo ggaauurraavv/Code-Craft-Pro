@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style9.css">
+    <title>Document Editor</title>
+</head>
+<body>
+
+<header>
+    <h1>Document Editor</h1>
+</header>
+
+<div class="editor-container">
+    <div class="toolbar">
+        <button onclick="formatText('bold')">Bold</button>
+        <button onclick="formatText('italic')">Italic</button>
+        <button onclick="formatText('underline')">Underline</button>
+        <button onclick="formatText('insertOrderedList')">Numbered List</button>
+        <button onclick="formatText('insertUnorderedList')">Bullet List</button>
+        <button onclick="downloadDocument()">Download</button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+</div>
+
+<button id="Home">Home</button>
+
+<script src="Script9.js">
+
+</script>
+
+</body>
+</html>
+ 

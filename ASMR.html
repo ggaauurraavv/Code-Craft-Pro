@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASMR Haven</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #8c53ff;
+            text-align: center;
+        }
+
+        h1{
+            color: lightcoral;
+            padding-top: 50px;
+            font-size: 70px;
+
+        }
+
+        .keyboard-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            top: 325px;
+            left: 470px;
+            font-size: 60px;
+        }
+
+        .key {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 30px;
+            user-select: none;
+            box-shadow: 0 4px #bbb;
+            width: 40px;
+            height: 30px;
+        }
+
+        .key:active {
+            box-shadow: 0 2px #999;
+            transform: translateY(2px);
+        }
+
+        
+        #Home{
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #8c53ff;
+            color: whitesmoke;
+            border-radius: 30px;
+            height: 60px;
+            width: 130px;
+            font-size: 30px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border: none;
+        }
+
+        #Home:hover{
+            background-color: lightblue;
+            color: #8c53ff;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
+            transform: scale(1.05); 
+        }
+
+        .keyboar-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            top: 400px;
+            left: 470px;
+            font-size: 60px;
+        }
+
+        .keyboa-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            top: 475px;
+            left: 470px;
+            font-size: 60px;
+        }
+
+        .keybo-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            position: absolute;
+            top: 250px;
+            left: 470px;
+            font-size: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ASMR</h1>
+    <section id="keyboard" class="keyboard">
+        <div class="keyboard-container">
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+        </div>
+    </section>
+
+    <section id="keyboar" class="keyboar">
+        <div class="keyboar-container">
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+        </div>
+    </section>
+
+    <section id="keyboard" class="keyboard">
+        <div class="keyboa-container">
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+        </div>
+    </section>
+
+    <section id="keyboard" class="keyboard">
+        <div class="keybo-container">
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+            <div class="key" data-sound="button-press-40018 (mp3cut.net).mp3"></div>
+        </div>
+    </section>
+
+    <button id="Home">Home</button>
+
+    <script>
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('click', () => {
+                const sound = new Audio(key.getAttribute('data-sound'));
+                sound.play();
+            });
+        });
+
+        document.getElementById('Home').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+    </script>
+</body>
+</html>

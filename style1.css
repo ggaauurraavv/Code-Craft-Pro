@@ -1,0 +1,56 @@
+#Logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#search {
+  position: absolute;
+  top: 70%;
+  left: 40%;
+  transform: translate(-70%, -70%);
+}
+#text {
+  position: absolute;
+  top: 70%;
+  left: 52%;
+  transform: translate(-70%, -70%);
+
+}
+body{
+   background-color: black;
+}
+
+input{
+  height: 40px;
+  width: 400px;
+  margin-right: 100px;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  background-color: crimson;
+  color: black;
+}
+
+button{
+  height: 40px;
+  border-radius: 30px;
+  background-color: crimson;
+  margin-right: 320px;
+  margin-bottom: 15px;
+}
+
+button:hover{
+  background-color: cadetblue;  
+  color: pink;   
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); 
+}
+
+#home{
+  background-color: crimson;
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}

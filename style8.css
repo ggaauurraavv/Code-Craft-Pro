@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #8c53ff;
+}
+
+h1{
+    position: absolute;
+    top: 60px;
+    left: 500px;
+}
+
+iframe {
+    width: 1000px;
+    height: 70vh;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 150px;
+    top: 200px;
+    border: none;
+}
+input[type="file"] {
+    margin: 20px;
+    padding: 10px;
+    border: 5px solid black;
+    border-radius: 5px;
+    position: absolute;
+    top: 120px;
+    left: 470px;
+    border-radius: 30px;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0056b3;
+}
+
+#fullscreenBtn{
+    position: absolute;
+    top: 140px;
+    left: 800px;
+    background-color: lightblue;
+    color: #8c53ff;
+    border-radius: 30px;
+}
+
+#Home{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #8c53ff;
+    color: whitesmoke;
+    border-radius: 30px;
+    height: 60px;
+    width: 130px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border: none;
+}
+
+#Home:hover{
+    background-color: lightblue;
+    color: #8c53ff;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.05); 
+}
