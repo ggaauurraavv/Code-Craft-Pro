@@ -49,7 +49,10 @@ function displayNotes() {
     const notesList = document.getElementById('notes-list');
     notesList.innerHTML = '';
 
-    const notes = JSON.parse(localStorage.getItem('notes')) || [];
+    let notes = JSON.parse(localStorage.getItem('notes')) || [];
+    
+    // Ensure notes are sorted by time created
+    notes.sort((a, b) => a.id - b.id); // Ensures order is maintained
 
     notes.forEach(note => {
         const listItem = document.createElement('li');
