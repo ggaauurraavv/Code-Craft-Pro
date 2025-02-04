@@ -57,7 +57,7 @@ function displayNotes() {
     notes.forEach(note => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
-        <span>${note.text}</span>
+        <span style="white-space: pre-wrap;">${note.text}</span>
         <div id="noteBtns-container">
             <button id="editBtn" onclick="editNote(${note.id})"><i class="fa-solid fa-pen"></i></button>
             <button id="deleteBtn" onclick="deleteNote(${note.id})"><i class="fa-solid fa-trash"></i></button>
