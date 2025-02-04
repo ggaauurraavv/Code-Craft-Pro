@@ -70,37 +70,6 @@ window.addEventListener("mousemove", (e) => {
     prevY = currentY
 })
 
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getContext("2d");
-const undoBtn = document.querySelector(".undo");
-let undoStack = [];
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-// Save the current state before drawing
-function saveState() {
-    undoStack.push(canvas.toDataURL());
-    if (undoStack.length > 10) undoStack.shift(); // Keep history limited
-}
-
-// Undo the last action
-function undoLast() {
-    if (undoStack.length > 0) {
-        let img = new Image();
-        img.src = undoStack.pop();
-        img.onload = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0);
-        };
-    }
-}
-
-undoBtn.addEventListener("click", undoLast);
-
-// Modify drawing logic to call saveState before modifying the canvas
-canvas.addEventListener("mousedown", () => saveState());
-
 document.getElementById('Home').addEventListener('click', function() {
     window.location.href = 'index.html';
 });
