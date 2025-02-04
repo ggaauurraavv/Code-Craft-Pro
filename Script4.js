@@ -100,3 +100,7 @@ undoBtn.addEventListener("click", undoLast);
 
 // Modify drawing logic to call saveState before modifying the canvas
 canvas.addEventListener("mousedown", () => saveState());
+
+document.getElementById('Home').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
