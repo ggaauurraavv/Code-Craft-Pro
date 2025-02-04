@@ -7,7 +7,7 @@ function downloadDocument() {
     const blob = new Blob(['<html><body>' + editorContent + '</body></html>'], { type: 'application/msword' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'document.doc';
+    link.download = 'document.docs';
     link.click();
 }
 
