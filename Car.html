@@ -156,7 +156,10 @@
                 level = 3;
                 obstacleSpeed = 13; // Increase speed for level 3
                 alert('Level Up! The speed has increased even more!');
-            }
+            } else if (score > 75 && level === 3) {
+                level = 4;
+                obstacleSpeed = 16; // Increase speed for level 3
+                alert('Level Up! The speed has increased even more!');
         }
 
         function gameOver() {
