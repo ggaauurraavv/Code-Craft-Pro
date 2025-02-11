@@ -41,38 +41,16 @@
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #8c53ff;
+            background: #007BFF;
             color: white;
             border: none;
-            border-radius: 30px;
+            border-radius: 5px;
             cursor: pointer;
         }
 
         #replay-btn:hover {
-            background: lightblue;
-            color: #8c53ff;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
-            transform: scale(1.05); 
+            background: #0056b3;
         }
-
-        
-        #Home{
-            background-color: #8c53ff;
-            color: whitesmoke;
-            border-radius: 30px;
-            height: 35px;
-            width: 80px;
-            border: none;
-            margin-top: 0px;
-        }
-
-        #Home:hover{
-            background-color: lightblue;
-            color: #8c53ff;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); 
-            transform: scale(1.05); 
-        }
-
     </style>
 </head>
 <body>
@@ -80,7 +58,6 @@
     <div id="game-over">
         <div>Game Over! Your score: <span id="final-score">0</span></div>
         <button id="replay-btn">Replay</button>
-        <button id="Home">Exit</button>
     </div>
     <canvas id="gameCanvas"></canvas>
     <script>
@@ -174,6 +151,11 @@
             if (score > 35 && level === 1) {
                 level = 2;
                 obstacleSpeed = 10; // Increase speed for level 2
+                alert('Level Up! The speed has increased!');
+            } else if (score > 50 && level === 2) {
+                level = 3;
+                obstacleSpeed = 13; // Increase speed for level 3
+                alert('Level Up! The speed has increased even more!');
             }
         }
 
@@ -217,12 +199,6 @@
             }
         }, 2000);
         gameLoop();
-
-
-        document.getElementById('Home').addEventListener('click', function() {
-        window.location.href = 'index.html';
-        });
-
     </script>
 </body>
 </html>
