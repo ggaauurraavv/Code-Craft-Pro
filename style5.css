@@ -10,7 +10,7 @@ body {
 
 #container {
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 20px;
     box-shadow: 0px 10px 15px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     width: 827px;
@@ -46,7 +46,7 @@ body {
     background-color: #E1D9D1;
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     height: 200px;
     width: 200px;
     margin: 10px;
