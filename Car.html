@@ -37,7 +37,7 @@
             text-align: center;
         }
 
-        #replay-btn {
+        #replay-btn, #exit-btn {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
@@ -48,8 +48,12 @@
             cursor: pointer;
         }
 
-        #replay-btn:hover {
+        #replay-btn:hover, #exit-btn:hover {
             background: #0056b3;
+        }
+
+        #exit-btn {
+            background: #FF0000;
         }
     </style>
 </head>
@@ -58,6 +62,7 @@
     <div id="game-over">
         <div>Game Over! Your score: <span id="final-score">0</span></div>
         <button id="replay-btn">Replay</button>
+        <button id="exit-btn">Exit</button>
     </div>
     <canvas id="gameCanvas"></canvas>
     <script>
@@ -73,6 +78,7 @@
         const gameOverElement = document.getElementById('game-over');
         const finalScoreElement = document.getElementById('final-score');
         const replayButton = document.getElementById('replay-btn');
+        const exitButton = document.getElementById('exit-btn');
         let isPaused = false;
         let isGameOver = false;
 
@@ -119,46 +125,6 @@
             obstacles.push({ x, y: -obstacleHeight, width: obstacleWidth, height: obstacleHeight });
         }
 
-        function moveObstacles() {
-            obstacles.forEach(obstacle => {
-                obstacle.y += obstacleSpeed;
-            });
-
-            obstacles.forEach((obstacle, index) => {
-                if (obstacle.y > canvas.height) {
-                    obstacles.splice(index, 1);
-                    score++;
-                    scoreElement.textContent = `Score: ${score} (Level ${level})`;
-                    checkLevelUp();
-                }
-            });
-        }
-
-        function checkCollision() {
-            obstacles.forEach(obstacle => {
-                if (
-                    car.x < obstacle.x + obstacle.width &&
-                    car.x + car.width > obstacle.x &&
-                    car.y < obstacle.y + obstacle.height &&
-                    car.y + car.height > obstacle.y
-                ) {
-                    gameOver();
-                }
-            });
-        }
-
-        function checkLevelUp() {
-            if (score > 35 && level === 1) {
-                level = 2;
-                obstacleSpeed = 10; // Increase speed for level 2
-                alert('Level Up! The speed has increased!');
-            } else if (score > 50 && level === 2) {
-                level = 3;
-                obstacleSpeed = 13; // Increase speed for level 3
-                alert('Level Up! The speed has increased even more!');
-            }
-        }
-
         function gameOver() {
             isGameOver = true;
             isPaused = true;
@@ -170,34 +136,21 @@
             document.location.reload();
         });
 
+        exitButton.addEventListener('click', () => {
+            window.close();
+        });
+
         function gameLoop() {
             if (!isPaused) {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 drawCar();
-                moveObstacles();
                 obstacles.forEach(drawObstacle);
-                checkCollision();
             }
             if (!isGameOver) {
                 requestAnimationFrame(gameLoop);
             }
         }
 
-        window.addEventListener('keydown', e => {
-            if (e.key === 'ArrowLeft' && car.x > 0 && !isPaused) {
-                car.x -= car.speed;
-            } else if (e.key === 'ArrowRight' && car.x < canvas.width - car.width && !isPaused) {
-                car.x += car.speed;
-            } else if (e.key.toLowerCase() === 'l') {
-                isPaused = !isPaused && !isGameOver; // Toggle pause state, prevent unpausing after game over
-            }
-        });
-
-        setInterval(() => {
-            if (!isPaused && !isGameOver) {
-                createObstacle();
-            }
-        }, 2000);
         gameLoop();
     </script>
 </body>
